@@ -12,7 +12,6 @@ const username = process.env.GITHUB_USERNAME || process.env.VITE_GITHUB_USERNAME
 const includeForks =
   (process.env.GITHUB_INCLUDE_FORKS || process.env.VITE_GITHUB_INCLUDE_FORKS || "false") === "true"
 const githubToken = process.env.GITHUB_TOKEN
-const releaseCommitMessage = process.env.PORTFOLIO_RELEASE_COMMIT_MESSAGE || "VERSION_FINALE"
 
 function buildHeaders() {
   return {
@@ -74,22 +73,6 @@ async function fetchRepos() {
   return repos
 }
 
-async function fetchLatestCommitMessage(repo) {
-  const response = await fetch(
-    `https://api.github.com/repos/${username}/${repo.name}/commits?per_page=1&sha=${repo.default_branch}`,
-    { headers: buildHeaders() },
-  )
-
-  if (!response.ok) {
-    throw new Error(`Commit lookup failed for ${repo.name} with status ${response.status}`)
-  }
-
-  const commits = await response.json()
-  const latestCommit = Array.isArray(commits) ? commits[0] : null
-
-  return latestCommit?.commit?.message?.trim() || ""
-}
-
 function getAutomaticScore(repo) {
   const sizeScore = Math.min(repo.size || 0, 5000)
   const starsScore = (repo.stargazers_count || 0) * 200
@@ -116,25 +99,10 @@ function getAutomaticScore(repo) {
 }
 
 async function normalizeRepos(repos, priorities) {
-  const candidateRepos = repos
+  return repos
     .filter((repo) => !repo.private)
     .filter((repo) => includeForks || !repo.fork)
-
-  const reposWithCommitStatus = await Promise.all(
-    candidateRepos.map(async (repo) => {
-      const latestCommitMessage = await fetchLatestCommitMessage(repo)
-
-      return {
-        repo,
-        latestCommitMessage,
-        isPortfolioReady: latestCommitMessage === releaseCommitMessage,
-      }
-    }),
-  )
-
-  return reposWithCommitStatus
-    .filter(({ isPortfolioReady }) => isPortfolioReady)
-    .map(({ repo, latestCommitMessage }) => {
+    .map((repo) => {
       const manualPriority = Number(
         priorities.repos[repo.name] ?? priorities.defaultPriority ?? 0,
       )
@@ -154,7 +122,6 @@ async function normalizeRepos(repos, priorities) {
         updated_at: repo.updated_at,
         topics: Array.isArray(repo.topics) ? repo.topics : [],
         fork: repo.fork,
-        latest_commit_message: latestCommitMessage,
         manual_priority: manualPriority,
         automatic_score: automaticScore,
         rank_score: manualPriority * 10000 + automaticScore,
@@ -174,7 +141,6 @@ async function main() {
   const payload = {
     username,
     includeForks,
-    releaseCommitMessage,
     ranking: {
       mode: "manual-priority-then-auto-score",
       defaultPriority: priorities.defaultPriority,
@@ -187,7 +153,7 @@ async function main() {
   await writeFile(outputPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8")
 
   console.log(
-    `Synced ${payload.projects.length} public repositories for ${username} with release commit "${releaseCommitMessage}" into ${path.relative(repoRoot, outputPath)}`,
+    `Synced ${payload.projects.length} public repositories for ${username} into ${path.relative(repoRoot, outputPath)}`,
   )
 }
 

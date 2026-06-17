@@ -1,6 +1,11 @@
 {
   "defaultPriority": 0,
   "repos": {
-    "TrustGate-AI-SSO-MFA": 10
+    "TrustGate-AI-SSO-MFA": 10,
+    "PFE-_SSO_MFA-IA": 9,
+    "ecommerce_pwa": 8,
+    "projet-HelpHub": 8,
+    "quiz-game-": 7,
+    "Gestionnaire-de-Fichiers_poo": 6
   }
 }
