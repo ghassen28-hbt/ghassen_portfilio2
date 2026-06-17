@@ -16,7 +16,12 @@
     "stars_one": "{{count}} star",
     "stars_other": "{{count}} stars",
     "updated": "Updated {{date}}",
-    "synced": "Synced from GitHub on {{date}}"
+    "synced": "Synced from GitHub on {{date}}",
+    "badges": {
+      "topProject": "Top Project",
+      "featured": "Featured",
+      "priority": "Priority {{count}}"
+    }
   },
   "experience": {
     "title": "Experience"

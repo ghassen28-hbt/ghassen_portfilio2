@@ -16,7 +16,12 @@
     "stars_one": "{{count}} etoile",
     "stars_other": "{{count}} etoiles",
     "updated": "Mis a jour le {{date}}",
-    "synced": "Synchronise depuis GitHub le {{date}}"
+    "synced": "Synchronise depuis GitHub le {{date}}",
+    "badges": {
+      "topProject": "Top project",
+      "featured": "En vedette",
+      "priority": "Priorite {{count}}"
+    }
   },
   "experience": {
     "title": "Experience"

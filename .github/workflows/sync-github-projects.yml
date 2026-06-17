@@ -35,6 +35,7 @@ jobs:
         env:
           GITHUB_USERNAME: ${{ vars.PORTFOLIO_GITHUB_USERNAME || 'ghassen28-hbt' }}
           GITHUB_INCLUDE_FORKS: ${{ vars.PORTFOLIO_GITHUB_INCLUDE_FORKS || 'false' }}
+          PORTFOLIO_RELEASE_COMMIT_MESSAGE: ${{ vars.PORTFOLIO_RELEASE_COMMIT_MESSAGE || 'VERSION_FINALE' }}
           GITHUB_TOKEN: ${{ secrets.PORTFOLIO_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
         run: npm run sync:projects
 

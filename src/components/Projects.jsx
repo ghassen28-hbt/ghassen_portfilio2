@@ -47,6 +47,7 @@ export default function Projects() {
                     description={repo.description || t("projects.noDescription")}
                     language={repo.language}
                     link={repo.html_url}
+                    manualPriority={repo.manual_priority}
                     pushedAt={repo.pushed_at}
                     stars={repo.stargazers_count}
                     title={repo.name}
@@ -77,12 +78,15 @@ function ProjectCard({
   description,
   language,
   link,
+  manualPriority,
   pushedAt,
   stars,
   direction,
   t,
   locale,
 }) {
+  const badge = getProjectBadge(manualPriority, t)
+
   return (
     <motion.div
       initial={{ opacity: 0, x: direction === "left" ? -30 : 30, y: 20 }}
@@ -93,9 +97,17 @@ function ProjectCard({
       className="project-card bg-gray-900/40 backdrop-blur-md p-4 sm:p-5 md:p-6 rounded border border-accent/30"
     >
       <div className="flex items-start justify-between gap-4 mb-3">
-        <h3 className="text-lg sm:text-xl font-semibold text-accent break-words">
-          {title}
-        </h3>
+        <div className="min-w-0">
+          {badge ? (
+            <span className="inline-flex items-center rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-accent mb-3">
+              {badge}
+            </span>
+          ) : null}
+
+          <h3 className="text-lg sm:text-xl font-semibold text-accent break-words">
+            {title}
+          </h3>
+        </div>
 
         {language ? (
           <span className="text-xs uppercase tracking-[0.2em] text-gray-400 shrink-0">
@@ -133,4 +145,20 @@ function formatDate(dateValue, locale) {
     month: "short",
     year: "numeric",
   }).format(new Date(dateValue))
+}
+
+function getProjectBadge(manualPriority, t) {
+  if (!manualPriority || manualPriority <= 0) {
+    return ""
+  }
+
+  if (manualPriority >= 10) {
+    return t("projects.badges.topProject")
+  }
+
+  if (manualPriority >= 5) {
+    return t("projects.badges.featured")
+  }
+
+  return t("projects.badges.priority", { count: manualPriority })
 }

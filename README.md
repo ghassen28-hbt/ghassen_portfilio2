@@ -97,6 +97,14 @@ npm run sync:projects
 
 This generates [src/data/github-projects.json](src/data/github-projects.json), which the UI reads at build time.
 
+### Ranking projects
+
+Projects are sorted using:
+- manual priority from [src/data/project-priorities.json](src/data/project-priorities.json)
+- then an automatic score based on repository size, stars, forks, topics, description, homepage, and recency
+
+Only public repositories are eligible, and a repository is included only if its latest commit message matches `PORTFOLIO_RELEASE_COMMIT_MESSAGE`.
+
 ### GitHub Actions automation
 
 The workflow [.github/workflows/sync-github-projects.yml](.github/workflows/sync-github-projects.yml) runs:
@@ -107,6 +115,7 @@ The workflow [.github/workflows/sync-github-projects.yml](.github/workflows/sync
 Recommended repository settings:
 - `PORTFOLIO_GITHUB_USERNAME`: your GitHub username
 - `PORTFOLIO_GITHUB_INCLUDE_FORKS`: set to `true` if you want forks included
+- `PORTFOLIO_RELEASE_COMMIT_MESSAGE`: only repositories whose latest commit message matches this value are added to the portfolio
 - `PORTFOLIO_GITHUB_TOKEN`: optional personal access token for higher API limits
 
 When the snapshot changes, the workflow commits the updated JSON file back to the repository automatically.
