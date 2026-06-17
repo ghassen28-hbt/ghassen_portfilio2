@@ -10,23 +10,13 @@
   },
   "projects": {
     "title": "Projects",
-    "portfolio": {
-      "title": "Portfolio Website",
-      "description": "Personal portfolio built with React, Tailwind, and Framer Motion."
-    },
-    "ecommerce": {
-      "title": "E-commerce App",
-      "description": "An E-Commerce Progressive Web App (PWA) that allows users to browse products, manage their cart, and place orders seamlessly across devices. Built for performance and offline support, the app delivers a fast, responsive, and reliable shopping experience with modern web technologies."
-    },
-    "quiz": {
-      "title": "Quiz-Game",
-      "description": "Quiz Battle Chrono is a fast-paced quiz game where players answer timed questions. Correct and quick answers earn more points, combining knowledge and speed in a competitive and engaging experience."
-    },
-    "helpHub": {
-      "title": "HELP-HUB",
-      "description": "The HelpHub project is a web-based solidarity platform designed to connect donors with charitable organizations in a simple and fast way."
-    },
-    "viewCode": "View Code"
+    "viewCode": "View Code",
+    "empty": "No public repositories found for {{username}}.",
+    "noDescription": "No description has been added for this repository yet.",
+    "stars_one": "{{count}} star",
+    "stars_other": "{{count}} stars",
+    "updated": "Updated {{date}}",
+    "synced": "Synced from GitHub on {{date}}"
   },
   "experience": {
     "title": "Experience"

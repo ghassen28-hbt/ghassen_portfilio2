@@ -85,6 +85,34 @@ The app will open at `http://localhost:3001` with hot module replacement enabled
 
 ---
 
+## GitHub Projects Automation
+
+This portfolio can sync its Projects section automatically from your public GitHub repositories.
+
+### Local sync
+
+```bash
+npm run sync:projects
+```
+
+This generates [src/data/github-projects.json](src/data/github-projects.json), which the UI reads at build time.
+
+### GitHub Actions automation
+
+The workflow [.github/workflows/sync-github-projects.yml](.github/workflows/sync-github-projects.yml) runs:
+- every day at 06:00 UTC
+- manually from the GitHub Actions tab
+- on pushes that change the sync script or workflow
+
+Recommended repository settings:
+- `PORTFOLIO_GITHUB_USERNAME`: your GitHub username
+- `PORTFOLIO_GITHUB_INCLUDE_FORKS`: set to `true` if you want forks included
+- `PORTFOLIO_GITHUB_TOKEN`: optional personal access token for higher API limits
+
+When the snapshot changes, the workflow commits the updated JSON file back to the repository automatically.
+
+---
+
 ##  Responsive Design
 
 This portfolio is **fully responsive** and tested on:

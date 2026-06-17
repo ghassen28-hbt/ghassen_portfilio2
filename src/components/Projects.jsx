@@ -1,12 +1,15 @@
 import { motion } from "framer-motion" // eslint-disable-line no-unused-vars
 import { useTranslation } from "react-i18next"
 import OutlineWrapper from "./OutlineWrapper"
+import githubProjects from "../data/github-projects.json"
 
 export default function Projects() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const repos = Array.isArray(githubProjects.projects) ? githubProjects.projects : []
+  const username = githubProjects.username || "ghassen28-hbt"
+
   return (
     <section id="projects" className="relative py-10">
-      {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           className="absolute top-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
@@ -27,51 +30,59 @@ export default function Projects() {
             {t("projects.title")}
           </motion.h2>
 
-          <div className="projects-container grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-            {/* Portfolio */}
-            <ProjectCard
-              title={t("projects.portfolio.title")}
-              description={t("projects.portfolio.description")}
-              link="https://github.com/ghassen28-hbt/Ghassen_portfilio.git"
-              direction="left"
-              t={t}
-            />
+          {repos.length === 0 ? (
+            <StatusCard message={t("projects.empty", { username })} />
+          ) : (
+            <>
+              <p className="mb-8 text-sm text-gray-500">
+                {t("projects.synced", {
+                  date: formatDate(githubProjects.generatedAt, i18n.language),
+                })}
+              </p>
 
-            {/* Ecommerce */}
-            <ProjectCard
-              title={t("projects.ecommerce.title")}
-              description={t("projects.ecommerce.description")}
-              link="https://github.com/ghassen28-hbt/ecommerce_pwa.git"
-              direction="right"
-              t={t}
-            />
-
-            {/* Quiz */}
-            <ProjectCard
-              title={t("projects.quiz.title")}
-              description={t("projects.quiz.description")}
-              link="https://github.com/ghassen28-hbt/quiz-game-.git"
-              direction="left"
-              t={t}
-            />
-
-            {/* HelpHub */}
-            <ProjectCard
-              title={t("projects.helpHub.title")}
-              description={t("projects.helpHub.description")}
-              link="https://github.com/ghassen28-hbt/projet-HelpHub.git"
-              direction="right"
-              t={t}
-            />
-          </div>
+              <div className="projects-container grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                {repos.map((repo, index) => (
+                  <ProjectCard
+                    key={repo.id}
+                    description={repo.description || t("projects.noDescription")}
+                    language={repo.language}
+                    link={repo.html_url}
+                    pushedAt={repo.pushed_at}
+                    stars={repo.stargazers_count}
+                    title={repo.name}
+                    direction={index % 2 === 0 ? "left" : "right"}
+                    t={t}
+                    locale={i18n.language}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </OutlineWrapper>
       </div>
     </section>
   )
 }
 
-/* 🔹 Composant réutilisable */
-function ProjectCard({ title, description, link, direction, t }) {
+function StatusCard({ message }) {
+  return (
+    <div className="project-card bg-gray-900/40 backdrop-blur-md p-6 rounded border border-accent/30 text-center text-gray-300">
+      <p>{message}</p>
+    </div>
+  )
+}
+
+function ProjectCard({
+  title,
+  description,
+  language,
+  link,
+  pushedAt,
+  stars,
+  direction,
+  t,
+  locale,
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, x: direction === "left" ? -30 : 30, y: 20 }}
@@ -81,22 +92,45 @@ function ProjectCard({ title, description, link, direction, t }) {
       viewport={{ once: true }}
       className="project-card bg-gray-900/40 backdrop-blur-md p-4 sm:p-5 md:p-6 rounded border border-accent/30"
     >
-      <h3 className="text-lg sm:text-xl font-semibold mb-2 text-accent">
-        {title}
-      </h3>
+      <div className="flex items-start justify-between gap-4 mb-3">
+        <h3 className="text-lg sm:text-xl font-semibold text-accent break-words">
+          {title}
+        </h3>
 
-      <p className="text-gray-400 text-sm sm:text-base">
-        {description}
-      </p>
+        {language ? (
+          <span className="text-xs uppercase tracking-[0.2em] text-gray-400 shrink-0">
+            {language}
+          </span>
+        ) : null}
+      </div>
+
+      <p className="text-gray-400 text-sm sm:text-base min-h-20">{description}</p>
+
+      <div className="mt-4 flex items-center justify-between gap-3 text-xs sm:text-sm text-gray-500">
+        <span>{t("projects.stars", { count: stars })}</span>
+        <span>{t("projects.updated", { date: formatDate(pushedAt, locale) })}</span>
+      </div>
 
       <motion.button
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         className="btn-primary mt-4 w-full text-sm sm:text-base"
-        onClick={() => window.open(link, "_blank")}
+        onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
       >
         {t("projects.viewCode")}
       </motion.button>
     </motion.div>
   )
+}
+
+function formatDate(dateValue, locale) {
+  if (!dateValue) {
+    return ""
+  }
+
+  return new Intl.DateTimeFormat(locale === "fr" ? "fr-FR" : "en-US", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(dateValue))
 }

@@ -1,38 +1,28 @@
 {
   "home": {
     "title": "Ghassen Mbarki",
-    "description": "Étudiant en Systèmes d'Information de Gestion @ ISGT. Passionné par la création de solutions logicielles intelligentes et efficaces — combinant créativité et logique pour transformer les idées en réalité grâce à un design propre et un code solide",
+    "description": "Etudiant en Systemes d'Information de Gestion a l'ISGT. Passionne par la creation de solutions logicielles intelligentes et efficaces, en melangeant creativite et logique pour transformer des idees en realite avec un design propre et un code solide.",
     "viewWork": "Voir mes travaux",
     "contactMe": "Me contacter"
   },
   "education": {
-    "title": "Éducation"
+    "title": "Education"
   },
   "projects": {
     "title": "Projets",
-    "portfolio": {
-      "title": "Site Portfolio",
-      "description": "Portfolio personnel conçu avec React, Tailwind et Framer Motion."
-    },
-    "ecommerce": {
-      "title": "Application E-commerce",
-      "description": "Une application Web Progressive (PWA) d'E-commerce qui permet aux utilisateurs de parcourir les produits, gérer leur panier et passer des commandes de manière transparente sur tous les appareils. Conçue pour la performance et le support hors ligne, l'application offre une expérience d'achat rapide, réactive et fiable avec les technologies web modernes."
-    },
-    "quiz": {
-      "title": "Jeu Quiz",
-      "description": "Quiz Battle Chrono est un jeu de quiz rapide où les joueurs répondent à des questions chronométrées. Les réponses correctes et rapides gagnent plus de points, combinant connaissance et vitesse dans une expérience compétitive et engageante."
-    },
-    "helpHub": {
-      "title": "HELP-HUB",
-      "description": "Le projet HelpHub est une plateforme de solidarité basée sur le web conçue pour connecter les donateurs avec les organisations caritatives de manière simple et rapide."
-    },
-    "viewCode": "Voir le code"
+    "viewCode": "Voir le code",
+    "empty": "Aucun depot public trouve pour {{username}}.",
+    "noDescription": "Aucune description n'a encore ete ajoutee pour ce depot.",
+    "stars_one": "{{count}} etoile",
+    "stars_other": "{{count}} etoiles",
+    "updated": "Mis a jour le {{date}}",
+    "synced": "Synchronise depuis GitHub le {{date}}"
   },
   "experience": {
-    "title": "Expérience"
+    "title": "Experience"
   },
   "technologies": {
-    "title": "Technologies & Connaissances"
+    "title": "Technologies et connaissances"
   },
   "contact": {
     "title": "Me contacter"
