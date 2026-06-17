@@ -6,6 +6,26 @@
     "mode": "manual-priority-then-auto-score",
     "defaultPriority": 0
   },
-  "generatedAt": "2026-06-17T13:14:02.995Z",
-  "projects": []
+  "generatedAt": "2026-06-17T13:34:46.217Z",
+  "projects": [
+    {
+      "id": 1136520141,
+      "name": "ghassen_portfilio2",
+      "description": null,
+      "html_url": "https://github.com/ghassen28-hbt/ghassen_portfilio2",
+      "homepage": "https://ghassenportfilio2.vercel.app",
+      "language": "JavaScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 287,
+      "pushed_at": "2026-06-17T13:34:22Z",
+      "updated_at": "2026-06-17T13:06:17Z",
+      "topics": [],
+      "fork": false,
+      "latest_commit_message": "VERSION_FINALE",
+      "manual_priority": 0,
+      "automatic_score": 752,
+      "rank_score": 752
+    }
+  ]
 }
