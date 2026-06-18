@@ -73,6 +73,35 @@ async function fetchRepos() {
   return repos
 }
 
+async function fetchRepoLanguages(repo) {
+  const response = await fetch(
+    `https://api.github.com/repos/${username}/${repo.name}/languages`,
+    { headers: buildHeaders() },
+  )
+
+  if (!response.ok) {
+    throw new Error(`Languages lookup failed for ${repo.name} with status ${response.status}`)
+  }
+
+  const languageBytes = await response.json()
+  const totalBytes = Object.values(languageBytes).reduce(
+    (sum, bytes) => sum + Number(bytes || 0),
+    0,
+  )
+
+  if (!totalBytes) {
+    return []
+  }
+
+  return Object.entries(languageBytes)
+    .map(([name, bytes]) => ({
+      name,
+      bytes,
+      percentage: Number(((bytes / totalBytes) * 100).toFixed(1)),
+    }))
+    .sort((firstLanguage, secondLanguage) => secondLanguage.bytes - firstLanguage.bytes)
+}
+
 function getAutomaticScore(repo) {
   const sizeScore = Math.min(repo.size || 0, 5000)
   const starsScore = (repo.stargazers_count || 0) * 200
@@ -99,14 +128,17 @@ function getAutomaticScore(repo) {
 }
 
 async function normalizeRepos(repos, priorities) {
-  return repos
+  const candidateRepos = repos
     .filter((repo) => !repo.private)
     .filter((repo) => includeForks || !repo.fork)
-    .map((repo) => {
+
+  const normalizedRepos = await Promise.all(
+    candidateRepos.map(async (repo) => {
       const manualPriority = Number(
         priorities.repos[repo.name] ?? priorities.defaultPriority ?? 0,
       )
       const automaticScore = getAutomaticScore(repo)
+      const languages = await fetchRepoLanguages(repo)
 
       return {
         id: repo.id,
@@ -120,18 +152,21 @@ async function normalizeRepos(repos, priorities) {
         size: repo.size,
         pushed_at: repo.pushed_at,
         updated_at: repo.updated_at,
+        languages,
         topics: Array.isArray(repo.topics) ? repo.topics : [],
         fork: repo.fork,
         manual_priority: manualPriority,
         automatic_score: automaticScore,
         rank_score: manualPriority * 10000 + automaticScore,
       }
-    })
-    .sort(
-      (firstRepo, secondRepo) =>
-        secondRepo.rank_score - firstRepo.rank_score ||
-        new Date(secondRepo.updated_at) - new Date(firstRepo.updated_at),
-    )
+    }),
+  )
+
+  return normalizedRepos.sort(
+    (firstRepo, secondRepo) =>
+      secondRepo.rank_score - firstRepo.rank_score ||
+      new Date(secondRepo.updated_at) - new Date(firstRepo.updated_at),
+  )
 }
 
 async function main() {

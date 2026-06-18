@@ -5,7 +5,7 @@
     "mode": "manual-priority-then-auto-score",
     "defaultPriority": 0
   },
-  "generatedAt": "2026-06-18T10:11:05.455Z",
+  "generatedAt": "2026-06-18T18:18:24.906Z",
   "projects": [
     {
       "id": 1272167563,
@@ -19,11 +19,48 @@
       "size": 1544,
       "pushed_at": "2026-06-17T11:06:14Z",
       "updated_at": "2026-06-17T11:06:23Z",
+      "languages": [
+        {
+          "name": "JavaScript",
+          "bytes": 608643,
+          "percentage": 50.9
+        },
+        {
+          "name": "Python",
+          "bytes": 505229,
+          "percentage": 42.2
+        },
+        {
+          "name": "FreeMarker",
+          "bytes": 41352,
+          "percentage": 3.5
+        },
+        {
+          "name": "CSS",
+          "bytes": 20620,
+          "percentage": 1.7
+        },
+        {
+          "name": "Java",
+          "bytes": 14630,
+          "percentage": 1.2
+        },
+        {
+          "name": "Shell",
+          "bytes": 4808,
+          "percentage": 0.4
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 970,
+          "percentage": 0.1
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 10,
-      "automatic_score": 1909,
-      "rank_score": 101909
+      "automatic_score": 1908,
+      "rank_score": 101908
     },
     {
       "id": 1085319587,
@@ -37,6 +74,28 @@
       "size": 2635,
       "pushed_at": "2025-10-28T22:12:28Z",
       "updated_at": "2025-12-05T21:01:02Z",
+      "languages": [
+        {
+          "name": "PHP",
+          "bytes": 71898,
+          "percentage": 77.7
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 10461,
+          "percentage": 11.3
+        },
+        {
+          "name": "HTML",
+          "bytes": 8905,
+          "percentage": 9.6
+        },
+        {
+          "name": "CSS",
+          "bytes": 1313,
+          "percentage": 1.4
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 8,
@@ -55,6 +114,28 @@
       "size": 799,
       "pushed_at": "2025-12-12T07:55:21Z",
       "updated_at": "2025-12-12T07:55:24Z",
+      "languages": [
+        {
+          "name": "JavaScript",
+          "bytes": 128558,
+          "percentage": 52.7
+        },
+        {
+          "name": "Python",
+          "bytes": 83937,
+          "percentage": 34.4
+        },
+        {
+          "name": "CSS",
+          "bytes": 31122,
+          "percentage": 12.8
+        },
+        {
+          "name": "HTML",
+          "bytes": 418,
+          "percentage": 0.2
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 8,
@@ -73,6 +154,18 @@
       "size": 512,
       "pushed_at": "2026-01-13T16:30:27Z",
       "updated_at": "2026-01-13T20:01:37Z",
+      "languages": [
+        {
+          "name": "Java",
+          "bytes": 133185,
+          "percentage": 99.4
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 790,
+          "percentage": 0.6
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 7,
@@ -91,6 +184,13 @@
       "size": 491,
       "pushed_at": "2025-10-29T08:23:17Z",
       "updated_at": "2025-12-05T21:01:08Z",
+      "languages": [
+        {
+          "name": "Java",
+          "bytes": 55456,
+          "percentage": 100
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 6,
@@ -109,6 +209,38 @@
       "size": 26830,
       "pushed_at": "2025-12-14T23:12:17Z",
       "updated_at": "2025-12-14T23:12:21Z",
+      "languages": [
+        {
+          "name": "PHP",
+          "bytes": 19208352,
+          "percentage": 71.7
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 5252713,
+          "percentage": 19.6
+        },
+        {
+          "name": "CSS",
+          "bytes": 2268954,
+          "percentage": 8.5
+        },
+        {
+          "name": "HTML",
+          "bytes": 31213,
+          "percentage": 0.1
+        },
+        {
+          "name": "SCSS",
+          "bytes": 26650,
+          "percentage": 0.1
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 334,
+          "percentage": 0
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 0,
@@ -127,6 +259,13 @@
       "size": 12738,
       "pushed_at": "2026-01-13T20:13:15Z",
       "updated_at": "2026-01-13T20:13:19Z",
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 2138,
+          "percentage": 100
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 0,
@@ -145,6 +284,13 @@
       "size": 2074,
       "pushed_at": "2025-10-29T08:30:20Z",
       "updated_at": "2025-12-05T21:01:13Z",
+      "languages": [
+        {
+          "name": "C",
+          "bytes": 38556,
+          "percentage": 100
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 0,
@@ -160,14 +306,31 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "size": 795,
-      "pushed_at": "2026-06-17T13:46:21Z",
-      "updated_at": "2026-06-17T13:47:29Z",
+      "size": 797,
+      "pushed_at": "2026-06-18T10:11:09Z",
+      "updated_at": "2026-06-18T10:11:13Z",
+      "languages": [
+        {
+          "name": "JavaScript",
+          "bytes": 50979,
+          "percentage": 79.2
+        },
+        {
+          "name": "CSS",
+          "bytes": 13060,
+          "percentage": 20.3
+        },
+        {
+          "name": "HTML",
+          "bytes": 363,
+          "percentage": 0.6
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 1260,
-      "rank_score": 1260
+      "automatic_score": 1262,
+      "rank_score": 1262
     },
     {
       "id": 1086367688,
@@ -181,6 +344,23 @@
       "size": 287,
       "pushed_at": "2026-01-17T20:58:12Z",
       "updated_at": "2026-01-17T20:58:15Z",
+      "languages": [
+        {
+          "name": "JavaScript",
+          "bytes": 44093,
+          "percentage": 76.7
+        },
+        {
+          "name": "CSS",
+          "bytes": 13060,
+          "percentage": 22.7
+        },
+        {
+          "name": "HTML",
+          "bytes": 363,
+          "percentage": 0.6
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 0,
@@ -199,6 +379,18 @@
       "size": 286,
       "pushed_at": "2025-12-06T21:39:10Z",
       "updated_at": "2026-01-13T20:04:34Z",
+      "languages": [
+        {
+          "name": "HTML",
+          "bytes": 5581,
+          "percentage": 98.2
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 102,
+          "percentage": 1.8
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 0,
@@ -217,6 +409,13 @@
       "size": 2,
       "pushed_at": "2026-01-21T00:33:55Z",
       "updated_at": "2026-01-21T00:33:59Z",
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 2201,
+          "percentage": 100
+        }
+      ],
       "topics": [],
       "fork": false,
       "manual_priority": 0,
@@ -235,11 +434,12 @@
       "size": 5,
       "pushed_at": "2026-01-15T14:39:16Z",
       "updated_at": "2026-01-15T14:39:22Z",
+      "languages": [],
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 217,
-      "rank_score": 217
+      "automatic_score": 216,
+      "rank_score": 216
     }
   ]
 }

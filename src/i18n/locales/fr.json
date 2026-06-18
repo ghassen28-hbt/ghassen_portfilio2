@@ -13,6 +13,8 @@
     "viewCode": "Voir le code",
     "empty": "Aucun depot public trouve pour {{username}}.",
     "noDescription": "Aucune description n'a encore ete ajoutee pour ce depot.",
+    "languages": "Langages",
+    "noLanguageData": "Aucune donnee de langage disponible.",
     "stars_one": "{{count}} etoile",
     "stars_other": "{{count}} etoiles",
     "updated": "Mis a jour le {{date}}",

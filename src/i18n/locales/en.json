@@ -13,6 +13,8 @@
     "viewCode": "View Code",
     "empty": "No public repositories found for {{username}}.",
     "noDescription": "No description has been added for this repository yet.",
+    "languages": "Languages",
+    "noLanguageData": "No language data available.",
     "stars_one": "{{count}} star",
     "stars_other": "{{count}} stars",
     "updated": "Updated {{date}}",

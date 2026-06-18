@@ -3,6 +3,21 @@ import { useTranslation } from "react-i18next"
 import OutlineWrapper from "./OutlineWrapper"
 import githubProjects from "../data/github-projects.json"
 
+const LANGUAGE_COLORS = {
+  JavaScript: "#f1e05a",
+  TypeScript: "#3178c6",
+  HTML: "#e34c26",
+  CSS: "#663399",
+  Python: "#3572A5",
+  Java: "#b07219",
+  PHP: "#4F5D95",
+  C: "#555555",
+  "C++": "#f34b7d",
+  Shell: "#89e051",
+  Vue: "#41b883",
+  Dart: "#00B4AB",
+}
+
 export default function Projects() {
   const { t, i18n } = useTranslation()
   const repos = Array.isArray(githubProjects.projects) ? githubProjects.projects : []
@@ -45,7 +60,7 @@ export default function Projects() {
                   <ProjectCard
                     key={repo.id}
                     description={repo.description || t("projects.noDescription")}
-                    language={repo.language}
+                    languages={repo.languages}
                     link={repo.html_url}
                     manualPriority={repo.manual_priority}
                     pushedAt={repo.pushed_at}
@@ -76,7 +91,7 @@ function StatusCard({ message }) {
 function ProjectCard({
   title,
   description,
-  language,
+  languages,
   link,
   manualPriority,
   pushedAt,
@@ -108,15 +123,13 @@ function ProjectCard({
             {title}
           </h3>
         </div>
-
-        {language ? (
-          <span className="text-xs uppercase tracking-[0.2em] text-gray-400 shrink-0">
-            {language}
-          </span>
-        ) : null}
       </div>
 
       <p className="text-gray-400 text-sm sm:text-base min-h-20">{description}</p>
+
+      <div className="mt-5">
+        <LanguageBreakdown languages={languages} t={t} />
+      </div>
 
       <div className="mt-4 flex items-center justify-between gap-3 text-xs sm:text-sm text-gray-500">
         <span>{t("projects.stars", { count: stars })}</span>
@@ -135,6 +148,51 @@ function ProjectCard({
   )
 }
 
+function LanguageBreakdown({ languages, t }) {
+  const languageList = Array.isArray(languages) ? languages.slice(0, 4) : []
+
+  return (
+    <div>
+      <p className="text-sm font-medium text-gray-200 mb-2">
+        {t("projects.languages")}
+      </p>
+
+      {languageList.length === 0 ? (
+        <p className="text-xs text-gray-500">{t("projects.noLanguageData")}</p>
+      ) : (
+        <>
+          <div className="flex overflow-hidden rounded-full h-2 bg-gray-800/80 border border-white/5">
+            {languageList.map((language) => (
+              <div
+                key={language.name}
+                className="h-full"
+                style={{
+                  width: `${language.percentage}%`,
+                  backgroundColor: getLanguageColor(language.name),
+                }}
+                title={`${language.name} ${formatPercentage(language.percentage)}`}
+              />
+            ))}
+          </div>
+
+          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+            {languageList.map((language) => (
+              <div key={language.name} className="flex items-center gap-2 text-xs text-gray-300">
+                <span
+                  className="w-2.5 h-2.5 rounded-full shrink-0"
+                  style={{ backgroundColor: getLanguageColor(language.name) }}
+                />
+                <span className="font-medium">{language.name}</span>
+                <span className="text-gray-500">{formatPercentage(language.percentage)}</span>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+
 function formatDate(dateValue, locale) {
   if (!dateValue) {
     return ""
@@ -145,6 +203,14 @@ function formatDate(dateValue, locale) {
     month: "short",
     year: "numeric",
   }).format(new Date(dateValue))
+}
+
+function formatPercentage(value) {
+  return `${Number(value).toFixed(1)}%`
+}
+
+function getLanguageColor(languageName) {
+  return LANGUAGE_COLORS[languageName] || "#8b949e"
 }
 
 function getProjectBadge(manualPriority, t) {
