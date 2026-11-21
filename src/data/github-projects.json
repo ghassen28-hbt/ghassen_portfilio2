@@ -5,7 +5,7 @@
     "mode": "manual-priority-then-auto-score",
     "defaultPriority": 0
   },
-  "generatedAt": "2026-11-20T14:42:25.462Z",
+  "generatedAt": "2026-11-21T13:58:45.195Z",
   "projects": [
     {
       "id": 1272167563,
@@ -59,8 +59,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 10,
-      "automatic_score": 1753,
-      "rank_score": 101753
+      "automatic_score": 1752,
+      "rank_score": 101752
     },
     {
       "id": 1085319587,
@@ -99,8 +99,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 8,
-      "automatic_score": 2911,
-      "rank_score": 82911
+      "automatic_score": 2910,
+      "rank_score": 82910
     },
     {
       "id": 1107030160,
@@ -139,8 +139,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 8,
-      "automatic_score": 1281,
-      "rank_score": 81281
+      "automatic_score": 1280,
+      "rank_score": 81280
     },
     {
       "id": 1121998516,
@@ -169,8 +169,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 7,
-      "automatic_score": 627,
-      "rank_score": 70627
+      "automatic_score": 626,
+      "rank_score": 70626
     },
     {
       "id": 1085573478,
@@ -194,8 +194,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 6,
-      "automatic_score": 767,
-      "rank_score": 60767
+      "automatic_score": 766,
+      "rank_score": 60766
     },
     {
       "id": 1116461274,
@@ -244,8 +244,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 5085,
-      "rank_score": 5085
+      "automatic_score": 5084,
+      "rank_score": 5084
     },
     {
       "id": 1133772095,
@@ -269,8 +269,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 5055,
-      "rank_score": 5055
+      "automatic_score": 5054,
+      "rank_score": 5054
     },
     {
       "id": 1085577458,
@@ -294,8 +294,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 2350,
-      "rank_score": 2350
+      "automatic_score": 2349,
+      "rank_score": 2349
     },
     {
       "id": 1136520141,
@@ -306,8 +306,8 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "size": 888,
-      "pushed_at": "2026-11-19T14:59:54Z",
+      "size": 890,
+      "pushed_at": "2026-11-20T14:42:29Z",
       "updated_at": "2026-11-12T15:25:19Z",
       "languages": [
         {
@@ -329,8 +329,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 1346,
-      "rank_score": 1346
+      "automatic_score": 1347,
+      "rank_score": 1347
     },
     {
       "id": 1086367688,
@@ -364,8 +364,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 546,
-      "rank_score": 546
+      "automatic_score": 545,
+      "rank_score": 545
     },
     {
       "id": 1110872231,
@@ -394,8 +394,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 341,
-      "rank_score": 341
+      "automatic_score": 340,
+      "rank_score": 340
     },
     {
       "id": 1138655611,
@@ -419,8 +419,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 64,
-      "rank_score": 64
+      "automatic_score": 63,
+      "rank_score": 63
     },
     {
       "id": 1135010004,
