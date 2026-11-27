@@ -5,7 +5,7 @@
     "mode": "manual-priority-then-auto-score",
     "defaultPriority": 0
   },
-  "generatedAt": "2026-11-26T16:08:26.862Z",
+  "generatedAt": "2026-11-27T15:55:34.031Z",
   "projects": [
     {
       "id": 1272167563,
@@ -59,8 +59,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 10,
-      "automatic_score": 1747,
-      "rank_score": 101747
+      "automatic_score": 1746,
+      "rank_score": 101746
     },
     {
       "id": 1085319587,
@@ -99,8 +99,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 8,
-      "automatic_score": 2905,
-      "rank_score": 82905
+      "automatic_score": 2904,
+      "rank_score": 82904
     },
     {
       "id": 1107030160,
@@ -139,8 +139,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 8,
-      "automatic_score": 1275,
-      "rank_score": 81275
+      "automatic_score": 1274,
+      "rank_score": 81274
     },
     {
       "id": 1121998516,
@@ -169,8 +169,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 7,
-      "automatic_score": 621,
-      "rank_score": 70621
+      "automatic_score": 620,
+      "rank_score": 70620
     },
     {
       "id": 1085573478,
@@ -194,8 +194,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 6,
-      "automatic_score": 761,
-      "rank_score": 60761
+      "automatic_score": 760,
+      "rank_score": 60760
     },
     {
       "id": 1116461274,
@@ -244,8 +244,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 5079,
-      "rank_score": 5079
+      "automatic_score": 5078,
+      "rank_score": 5078
     },
     {
       "id": 1133772095,
@@ -269,8 +269,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 5049,
-      "rank_score": 5049
+      "automatic_score": 5048,
+      "rank_score": 5048
     },
     {
       "id": 1085577458,
@@ -294,8 +294,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 2344,
-      "rank_score": 2344
+      "automatic_score": 2343,
+      "rank_score": 2343
     },
     {
       "id": 1136520141,
@@ -306,8 +306,8 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "size": 896,
-      "pushed_at": "2026-11-25T16:36:10Z",
+      "size": 897,
+      "pushed_at": "2026-11-26T16:08:31Z",
       "updated_at": "2026-11-12T15:25:19Z",
       "languages": [
         {
@@ -331,6 +331,61 @@
       "manual_priority": 0,
       "automatic_score": 1347,
       "rank_score": 1347
+    },
+    {
+      "id": 1473447805,
+      "name": "zero-trust_LLMShield",
+      "description": null,
+      "html_url": "https://github.com/ghassen28-hbt/zero-trust_LLMShield",
+      "homepage": null,
+      "language": "Python",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 177,
+      "pushed_at": "2026-11-26T17:05:04Z",
+      "updated_at": "2026-11-26T17:05:10Z",
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 472016,
+          "percentage": 47.5
+        },
+        {
+          "name": "CSS",
+          "bytes": 188460,
+          "percentage": 19
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 179573,
+          "percentage": 18.1
+        },
+        {
+          "name": "HTML",
+          "bytes": 130237,
+          "percentage": 13.1
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 18640,
+          "percentage": 1.9
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2380,
+          "percentage": 0.2
+        },
+        {
+          "name": "Shell",
+          "bytes": 1727,
+          "percentage": 0.2
+        }
+      ],
+      "topics": [],
+      "fork": false,
+      "manual_priority": 0,
+      "automatic_score": 542,
+      "rank_score": 542
     },
     {
       "id": 1086367688,
@@ -364,8 +419,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 540,
-      "rank_score": 540
+      "automatic_score": 539,
+      "rank_score": 539
     },
     {
       "id": 1110872231,
@@ -394,8 +449,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 335,
-      "rank_score": 335
+      "automatic_score": 334,
+      "rank_score": 334
     },
     {
       "id": 1138655611,
@@ -419,8 +474,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 58,
-      "rank_score": 58
+      "automatic_score": 57,
+      "rank_score": 57
     },
     {
       "id": 1135010004,
@@ -438,8 +493,8 @@
       "topics": [],
       "fork": false,
       "manual_priority": 0,
-      "automatic_score": 55,
-      "rank_score": 55
+      "automatic_score": 54,
+      "rank_score": 54
     }
   ]
 }
